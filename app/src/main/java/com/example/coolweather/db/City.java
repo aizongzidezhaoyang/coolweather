@@ -2,7 +2,7 @@ package com.example.coolweather.db;
 
 import org.litepal.crud.LitePalSupport;
 
-public class city extends LitePalSupport {
+public class City extends LitePalSupport {
     private int id;
     private String citName;
     private int cityCode;
@@ -36,3 +36,4 @@ public class city extends LitePalSupport {
         this.provinceId = provinceId;
     }
 }
+
