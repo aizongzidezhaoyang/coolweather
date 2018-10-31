@@ -39,7 +39,7 @@ public class ChooseAreaFragment extends Fragment {
     public static final int LEVEL_PROVINCE = 0;
     public static final int LEVEL_CITY = 1;
     public static final int LEVEL_COUNTY = 2;
-    private ProgressBar progressBar;
+    private ProgressDialog progressDialog;
     private TextView titleText;
     private Button backButton;
     private ListView listView;
@@ -196,9 +196,17 @@ public class ChooseAreaFragment extends Fragment {
     }
 
     private void showProgressDialog(){
-        if (progressBar == null){
-            progressBar = new ProgressBar(getActivity());
-            progressBar
+        if (progressDialog == null){
+            progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setMessage("正在加载...");
+            progressDialog.setCanceledOnTouchOutside(false);
+        }
+        progressDialog.show();
+    }
+
+    private  void closeProgressDialog(){
+        if (progressDialog != null){
+            progressDialog.dismiss();
         }
     }
 }
